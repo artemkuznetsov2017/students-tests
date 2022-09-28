@@ -1,13 +1,10 @@
 export class ChoiceVariant {
-  id: string;
   text: string;
-  choiceId: string;
 }
 
 export class Choice {
-  id: string;
+  type: string;
   question: string;
-  rightVariantId: string;
   variants: ChoiceVariant[];
-  selectedVariant: ChoiceVariant;
+  value: string;
 }

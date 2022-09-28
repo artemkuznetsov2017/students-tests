@@ -2,6 +2,7 @@
 	<div class="app__form">
 		<choices-form #choicesForm
 		              [choices]="choices"
+		              (formChange)="formChange()"
 		              (submitForm)="createJson()"></choices-form>
 	</div>
 </div>

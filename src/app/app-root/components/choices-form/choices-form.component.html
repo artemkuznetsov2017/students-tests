@@ -1,21 +1,95 @@
 <form #form="ngForm"
       class="choice-form"
       (ngSubmit)="submitForm.emit()">
-	<mat-radio-group *ngFor="let choice of choices"
-	                 class="choice-form__radio-wrapper"
-	                 required
-                     #radioGroup="ngModel"
-	                 [id]="choice.id"
-	                 [name]="'choice' + choice.id"
-	                 [(ngModel)]="choice.selectedVariant">
-		<span class="choice-form__radio-title"
-		      [innerHTML]="choice.question"></span>
-		<mat-radio-button *ngFor="let variant of choice.variants"
-		                  class="choice-form__radio-btn"
-		                  [value]="variant">{{variant.text}}</mat-radio-button>
-		<span *ngIf="radioGroup.touched && radioGroup.invalid"
-		      class="choice-form__radio-error">Selection is required</span>
-	</mat-radio-group>
+	<div class="choice-form__auth">
+		<div class="choice-form__auth-item">
+			<span class="choice-form__item-title">First Name</span>
+			<mat-form-field appearance="outline"
+			                floatLabel="never">
+				<input matInput
+				       required
+				       type="text"
+				       id="firstName"
+				       name="firstName"
+				       maxlength="100"
+				       autocomplete="nope"
+				       ngModel
+                       #firstName="ngModel"/>
+				<mat-error *ngIf="firstName.errors">
+					<span *ngIf="firstName.errors?.required">First Name is required<br></span>
+				</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="choice-form__auth-item">
+			<span class="choice-form__item-title">Last Name</span>
+			<mat-form-field appearance="outline"
+			                floatLabel="never">
+				<input matInput
+				       required
+				       type="text"
+				       id="lastName"
+				       name="lastName"
+				       maxlength="100"
+				       autocomplete="nope"
+				       ngModel
+                       #lastName="ngModel"/>
+				<mat-error *ngIf="lastName.errors">
+					<span *ngIf="lastName.errors?.required">Last Name is required<br></span>
+				</mat-error>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<ng-container *ngFor="let choice of choices; let index = index"
+	              [ngSwitch]="choice.type">
+		<span class="choice-form__item-title"
+		      [innerHTML]="(index + 1) + '. ' + choice.question"></span>
+
+		<!-- RADIO -->
+
+		<ng-container *ngSwitchCase="CHOICE_TYPE.radio">
+			<mat-radio-group class="choice-form__radio-wrapper"
+			                 required
+                             #radioGroup="ngModel"
+			                 [id]="'choice' + index"
+			                 [name]="'choice' + index"
+			                 [ngModelOptions]="{ standalone: true }"
+			                 [(ngModel)]="choice.value"
+			                 (ngModelChange)="formChange.emit()">
+				<mat-radio-button *ngFor="let variant of choice.variants"
+				                  class="choice-form__radio-btn"
+				                  [value]="variant.text">{{variant.text}}</mat-radio-button>
+				<span *ngIf="radioGroup.touched && radioGroup.invalid"
+				      class="choice-form__radio-error">Selection is required</span>
+			</mat-radio-group>
+		</ng-container>
+
+		<!-- INPUT -->
+
+		<ng-container *ngSwitchCase="CHOICE_TYPE.input">
+			<mat-form-field class="choice-form__input"
+			                appearance="outline"
+			                floatLabel="never">
+				<textarea matInput
+				          required
+				          type="text"
+				          cdkTextareaAutosize
+				          [id]="'choice' + index"
+				          [name]="'choice' + index"
+				          cdkAutosizeMinRows="1"
+				          cdkAutosizeMaxRows="5"
+				          placeholder="Enter answer"
+                          #inputModel="ngModel"
+                          [ngModelOptions]="{ standalone: true }"
+				          [(ngModel)]="choice.value"
+				          (ngModelChange)="formChange.emit()"></textarea>
+				<mat-error *ngIf="inputModel.invalid">
+					<span *ngIf="inputModel.errors?.required">Answer is required</span>
+				</mat-error>
+			</mat-form-field>
+		</ng-container>
+
+	</ng-container>
 	<div class="choice-form__actions">
 		<button mat-flat-button
 		        color="primary"
