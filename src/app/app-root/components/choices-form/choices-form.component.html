@@ -1,0 +1,25 @@
+<form #form="ngForm"
+      class="choice-form"
+      (ngSubmit)="submitForm.emit()">
+	<mat-radio-group *ngFor="let choice of choices"
+	                 class="choice-form__radio-wrapper"
+	                 required
+                     #radioGroup="ngModel"
+	                 [id]="choice.id"
+	                 [name]="'choice' + choice.id"
+	                 [(ngModel)]="choice.selectedVariant">
+		<span class="choice-form__radio-title"
+		      [innerHTML]="choice.question"></span>
+		<mat-radio-button *ngFor="let variant of choice.variants"
+		                  class="choice-form__radio-btn"
+		                  [value]="variant">{{variant.text}}</mat-radio-button>
+		<span *ngIf="radioGroup.touched && radioGroup.invalid"
+		      class="choice-form__radio-error">Selection is required</span>
+	</mat-radio-group>
+	<div class="choice-form__actions">
+		<button mat-flat-button
+		        color="primary"
+		        type="submit"
+		        id="choicesSubmitBtn">Create JSON</button>
+	</div>
+</form>

@@ -1,0 +1,28 @@
+.choice-form {
+  &__actions,
+  &__radio-btn,
+  &__radio-title {
+    padding: 0 24px;
+  }
+  &__actions {
+    margin-top: 36px;
+  }
+  &__radio {
+    &-wrapper {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+    &-title {
+      display: block;
+      margin-bottom: 12px;
+    }
+    &-error {
+      color: red;
+      display: block;
+      font-size: 13px;
+      padding: 12px 24px 0;
+    }
+  }
+}
