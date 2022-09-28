@@ -2,6 +2,7 @@
   padding: 0 24px;
   &__auth {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -24px;
     &-item {
       padding: 0 24px;
