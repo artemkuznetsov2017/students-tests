@@ -6,13 +6,11 @@
     "start": "ng serve --port=6500",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "npi:install": "npm install",
     "lint": "ng lint",
     "pull": "git pull origin HEAD -r",
     "push": "git push origin HEAD",
-    "build:prod": "ng build --configuration production --base-href https://artemkuznetsov2017.github.io/students-tests/",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
+    "build:prod": "ng build --configuration production --base-href https://artemkuznetsov2017.github.io/students-tests/"
   },
   "private": true,
   "dependencies": {
