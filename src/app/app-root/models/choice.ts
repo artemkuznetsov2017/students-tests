@@ -6,5 +6,5 @@ export class Choice {
   type: string;
   question: string;
   variants: ChoiceVariant[];
-  value: string;
+  value: string | string[];
 }

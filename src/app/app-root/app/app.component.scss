@@ -12,5 +12,9 @@
     max-width: 900px;
     box-sizing: border-box;
     background-color: white;
+    &-title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
   }
 }

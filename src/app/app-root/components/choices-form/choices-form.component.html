@@ -1,6 +1,6 @@
 <form #form="ngForm"
       class="choice-form"
-      (ngSubmit)="submitForm.emit()">
+      (ngSubmit)="isFormValid() && submitForm.emit()">
 	<div class="choice-form__auth">
 		<div class="choice-form__auth-item">
 			<span class="choice-form__item-title">First Name</span>
@@ -53,7 +53,6 @@
                              #radioGroup="ngModel"
 			                 [id]="'choice' + index"
 			                 [name]="'choice' + index"
-			                 [ngModelOptions]="{ standalone: true }"
 			                 [(ngModel)]="choice.value"
 			                 (ngModelChange)="formChange.emit()">
 				<mat-radio-button *ngFor="let variant of choice.variants"
@@ -80,13 +79,27 @@
 				          cdkAutosizeMaxRows="5"
 				          placeholder="Enter answer"
                           #inputModel="ngModel"
-                          [ngModelOptions]="{ standalone: true }"
 				          [(ngModel)]="choice.value"
 				          (ngModelChange)="formChange.emit()"></textarea>
 				<mat-error *ngIf="inputModel.invalid">
 					<span *ngIf="inputModel.errors?.required">Answer is required</span>
 				</mat-error>
 			</mat-form-field>
+		</ng-container>
+
+		<!-- CHECKBOX -->
+
+		<ng-container *ngSwitchCase="CHOICE_TYPE.checkbox">
+			<div class="choice-form__checkbox-wrapper">
+				<mat-checkbox *ngFor="let variant of choice.variants; let checkboxIndex = index"
+				              class="choice-form__checkbox"
+				              color="primary"
+				              [id]="'variant' + checkboxIndex"
+				              [name]="'variant' + checkboxIndex"
+				              [checked]="isCheckboxChecked(variant, choice)"
+				              (change)="setCheckboxChoiceValue($event.checked, variant, choice); formChange.emit()">{{variant.text}}
+				</mat-checkbox>
+			</div>
 		</ng-container>
 
 	</ng-container>

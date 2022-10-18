@@ -17,7 +17,7 @@ export class AppComponent {
   public choices: Choice[] = this.getSelectedChoicesData();
 
   public createJson(): void {
-    this.choicesForm.isFormValid() && downloadJSON(this.choices, this.getFileName());
+    downloadJSON(this.choices, this.getFileName());
   }
 
   public formChange(): void {
@@ -29,6 +29,6 @@ export class AppComponent {
   }
 
   private getFileName(): string {
-    return 'test_' + this.choicesForm?.form?.value?.lastName?.toLowerCase() + '_' + this.choicesForm?.form?.value?.firstName?.toLowerCase();
+    return 'test_' + this.choicesForm?.form?.value?.lastName?.toLowerCase() + '_' + this.choicesForm?.form?.value?.firstName?.toLowerCase() + '_' + new Date().toLocaleDateString();
   }
 }

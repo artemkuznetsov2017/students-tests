@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { COMPONENTS } from './components';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatInputModule,
     MatButtonModule,
     AppRoutingModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
   ],
   providers: [],

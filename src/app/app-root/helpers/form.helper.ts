@@ -13,3 +13,7 @@ export function isFormValid(form: NgForm): boolean {
 
   return form.valid;
 }
+
+export function getCleanText(text: string): string {
+  return text.replace(/\s+/g, '').toLowerCase();
+}

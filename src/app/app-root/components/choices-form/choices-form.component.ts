@@ -1,9 +1,9 @@
 import { NgForm } from '@angular/forms';
 import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { Choice } from '../../models/choice';
 import { CHOICE_TYPE } from '../../constants/choices';
-import { isFormValid } from '../../helpers/form.helper';
+import { Choice, ChoiceVariant } from '../../models/choice';
+import { getCleanText, isFormValid } from '../../helpers/form.helper';
 
 @Component({
   selector: 'choices-form',
@@ -23,5 +23,19 @@ export class ChoicesFormComponent {
 
   public isFormValid(): boolean {
     return isFormValid(this.form);
+  }
+
+  public isCheckboxChecked(variant: ChoiceVariant, choice: Choice): boolean {
+    const DATA = choice.value as string[] || [];
+
+    return DATA.some((it: string) => getCleanText(it) === getCleanText(variant.text));
+  }
+
+  public setCheckboxChoiceValue(checked: boolean, variant: ChoiceVariant, choice: Choice): void {
+    choice.value = choice.value ? choice.value as string[] : [];
+
+    checked
+      ? choice.value.push(variant.text)
+      : choice.value = [...choice.value.filter(it => getCleanText(it) !== getCleanText(variant.text))];
   }
 }
