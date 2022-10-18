@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "pull": "git pull origin HEAD -r",
     "push": "git push origin HEAD",
-    "build:prod": "ng build --configuration production --base-href https://artemkuznetsov2017.github.io/students-tests/"
+    "build:prod": "ng build --configuration production --base-href /students-tests/"
   },
   "private": true,
   "dependencies": {
