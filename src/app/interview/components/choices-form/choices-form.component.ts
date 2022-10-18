@@ -1,9 +1,9 @@
 import { NgForm } from '@angular/forms';
 import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 
-import { CHOICE_TYPE } from '../../constants/choices';
-import { Choice, ChoiceVariant } from '../../models/choice';
-import { getCleanText, isFormValid } from '../../helpers/form.helper';
+import { CHOICE_TYPE } from 'src/shared/constants/choice-type';
+import { Choice, ChoiceVariant } from '../../../../shared/models/choice';
+import { getCleanText, isFormValid } from '../../../../shared/helpers/form.helper';
 
 @Component({
   selector: 'choices-form',

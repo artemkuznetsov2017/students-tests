@@ -1,9 +1,5 @@
-<div class="app__body">
-	<div class="app__form">
-		<h2 class="app__form-title">TEST</h2>
-		<choices-form #choicesForm
-		              [choices]="choices"
-		              (formChange)="formChange()"
-		              (submitForm)="createJson()"></choices-form>
+<div class="app">
+	<div class="app__body">
+		<router-outlet></router-outlet>
 	</div>
 </div>

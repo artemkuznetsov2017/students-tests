@@ -5,6 +5,7 @@ export class ChoiceVariant {
 export class Choice {
   type: string;
   question: string;
+  isRight: boolean;
   variants: ChoiceVariant[];
   value: string | string[];
 }

@@ -1,17 +1,11 @@
-import { Choice } from '../models/choice';
-
-export const LOCALSTORAGE_CHOICES_KEY = 'selectedChoicesData';
-
-export enum CHOICE_TYPE {
-  radio = 'radio',
-  checkbox = 'checkbox',
-  input = 'input'
-}
+import { Choice } from '../../../shared/models/choice';
+import { CHOICE_TYPE } from '../../../shared/constants/choice-type';
 
 export const CHOICES: Choice[] = [
   {
     question: 'Какой Doctype является правильным в HTML5?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -28,6 +22,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Какой тэг НЕ относится к базовой структуре HTML документа?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -50,6 +45,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Какой из тэгов не являесть списком?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -72,6 +68,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Что такое Shadow DOM?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -85,6 +82,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Что такое tabindex?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -98,12 +96,14 @@ export const CHOICES: Choice[] = [
   {
     question: 'Что такое GIT и зачем он нужен?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Команда для того чтобы залить свой комит в удаленный репозиторий?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -129,6 +129,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Команда для того чтобы получить изменения из ветки которая находится нв удаленном репозитории?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -154,12 +155,14 @@ export const CHOICES: Choice[] = [
   {
     question: 'Опишите работу Cookie, Session Storage, Local Storage.',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое z-index?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -173,90 +176,105 @@ export const CHOICES: Choice[] = [
   {
     question: 'Что такое препроцессоры в чем удобство?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Какие значения свойства display вы знаете и как они работают?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Напишите 5 свойств относящихся с к флексу, с описанием того как они работают?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Напишите как работает свойство box-sizing?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое псевдоэлементы?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое псевдоклассы?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое БЭМ и как им пользоваться?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Как сверстать мобильную версию приложения?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Какие типы данных бывают?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Как добавить элемент в начало массива?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Как добавить элемент в конец массива?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'В чем разница между null и undefined?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'В чем разница между Array.prototype.forEach и Array.prototype.map?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое полифилы?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Выберете вариант(ы) при которых ссылка на объект сохраниться<br>(т.е. представим что, есть объект в переменной А его скопировали в перменную Б, при изменении полей объекта Б будут меняться поля объекта А)',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.checkbox,
     variants: [
       {
@@ -279,6 +297,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения {} === {} будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -301,6 +320,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения \'1\' === 1 будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -323,6 +343,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения 1 && 2 && 3 будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -345,6 +366,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения 10 && 2 && 33 будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -367,6 +389,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения 0 || 1 || 2 будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -389,6 +412,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Результатом выражения 10 || 1 || 0 || 2 будет?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -411,60 +435,70 @@ export const CHOICES: Choice[] = [
   {
     question: 'В чем разница между == и === ?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что вы знаете об AJAX?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое токен?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое ООП?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Для чего нужен RxJS и какую проблему он решает?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое Angular?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое Angular компонент?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Какие жизненые циклы Angular компонента вы знаете?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Каким образом можно организовать общение между Angular компонентами?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое input?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -478,6 +512,7 @@ export const CHOICES: Choice[] = [
   {
     question: 'Что такое output?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.radio,
     variants: [
       {
@@ -491,48 +526,56 @@ export const CHOICES: Choice[] = [
   {
     question: 'Как использовать одностороннюю и двухстороннюю привязку данных?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое angular сервисы?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'При помощи чего организовать многостраничность в angular приложении?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Как происходит общение с базами данных или какими-то сервисами?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое resolver?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое can activate?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое pipe?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },
   {
     question: 'Что такое директива и как создать собственную?',
     value: null,
+    isRight: null,
     type: CHOICE_TYPE.input,
     variants: null,
   },

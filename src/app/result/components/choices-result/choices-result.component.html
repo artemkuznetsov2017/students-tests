@@ -1,0 +1,27 @@
+<div *ngIf="interviewData"
+     class="choices-result">
+	<div class="choices-result__name">
+		{{interviewData.lastName}}
+		{{interviewData.firstName}}
+		{{getRightVariants(interviewData.choices)}}/{{interviewData.choices.length}}
+	</div>
+	<ul class="choices-result__list">
+		<li *ngFor="let choice of interviewData.choices; let index = index"
+		    class="choices-result__list-item">
+			<div class="choices-result__list-item-body">
+				<mat-checkbox class="choices-result__list-item-checkbox"
+				              color="primary"
+				              ngModel
+				              [id]="'resultIsRight' + index"
+				              [name]="'resultIsRight' + index"
+				              [(ngModel)]="choice.isRight"
+				              (ngModelChange)="selectionChange.emit()"></mat-checkbox>
+				<div>
+					<div class="choices-result__list-question"
+					     [innerHTML]="choice.question"></div>
+					<span class="choices-result__list-answer">{{choice.value}}</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

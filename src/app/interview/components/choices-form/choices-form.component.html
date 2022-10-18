@@ -97,8 +97,7 @@
 				              [id]="'variant' + checkboxIndex"
 				              [name]="'variant' + checkboxIndex"
 				              [checked]="isCheckboxChecked(variant, choice)"
-				              (change)="setCheckboxChoiceValue($event.checked, variant, choice); formChange.emit()">{{variant.text}}
-				</mat-checkbox>
+				              (change)="setCheckboxChoiceValue($event.checked, variant, choice); formChange.emit()">{{variant.text}}</mat-checkbox>
 			</div>
 		</ng-container>
 
