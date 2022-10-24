@@ -1,5 +1,25 @@
 <div class="app">
 	<div class="app__body">
-		<router-outlet></router-outlet>
+		<div *ngIf="!isRightPassword()"
+		     class="login-form">
+			<h1 class="app__title">Login</h1>
+			<div class="custom-form__field">
+				<span class="custom-form__field-title">Password</span>
+				<mat-form-field class="custom-form__field-input"
+				                appearance="outline"
+				                floatLabel="never">
+					<input matInput
+					       required
+					       ngModel
+					       type="password"
+					       id="password"
+					       name="password"
+					       maxlength="100"
+					       autocomplete="nope"
+					       [(ngModel)]="password"/>
+				</mat-form-field>
+			</div>
+		</div>
+		<router-outlet *ngIf="isRightPassword()"></router-outlet>
 	</div>
 </div>

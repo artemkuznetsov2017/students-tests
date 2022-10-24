@@ -1,24 +1,26 @@
-<h2 class="app__title">INTERVIEW RESULT</h2>
-<div class="result__attach">
-	<ng-container *ngIf="!interviewData">
-		<input type="file"
-		       hidden
-		       accept=".json"
-               #inputAttachFile
-		       id="'inputAttachFile"
-		       (change)="uploadFile(inputAttachFile.files[0])">
-		<button mat-flat-button
-		        color="primary"
-		        type="button"
-		        (click)="inputAttachFile.click()">Click To Attach File</button>
-	</ng-container>
-	<ng-container *ngIf="interviewData">
-		<button mat-flat-button
-		        color="primary"
-		        type="button"
-		        (click)="clearCheckedData()">Clear</button>
-	</ng-container>
+<div class="result">
+	<h2 class="app__title">INTERVIEW RESULT</h2>
+	<div class="result__attach">
+		<ng-container *ngIf="!interviewData">
+			<input type="file"
+			       hidden
+			       accept=".json"
+                   #inputAttachFile
+			       id="'inputAttachFile"
+			       (change)="uploadFile(inputAttachFile.files[0])">
+			<button mat-flat-button
+			        color="primary"
+			        type="button"
+			        (click)="inputAttachFile.click()">Click To Attach File</button>
+		</ng-container>
+		<ng-container *ngIf="interviewData">
+			<button mat-flat-button
+			        color="primary"
+			        type="button"
+			        (click)="clearCheckedData()">Clear</button>
+		</ng-container>
+	</div>
+	<choices-result *ngIf="interviewData"
+	                [interviewData]="interviewData"
+	                (selectionChange)="selectionChange()"></choices-result>
 </div>
-<choices-result *ngIf="interviewData"
-                [interviewData]="interviewData"
-                (selectionChange)="selectionChange()"></choices-result>

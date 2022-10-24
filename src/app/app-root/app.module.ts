@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app/app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     FormsModule,
     BrowserModule,
+    MatInputModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

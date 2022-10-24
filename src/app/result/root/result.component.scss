@@ -1,5 +1,9 @@
-.result {
-  &__attach {
-    text-align: center;
+result {
+  width: 100%;
+  .result {
+    padding: 24px 0;
+    &__attach {
+      text-align: center;
+    }
   }
 }
