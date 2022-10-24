@@ -10,6 +10,6 @@ export class AppComponent {
   public password: string;
 
   public isRightPassword(): boolean {
-    return this.password === 'Dreamer999!';
+    return this.password === 'Dreamer632!';
   }
 }
